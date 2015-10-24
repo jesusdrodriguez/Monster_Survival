@@ -5,10 +5,13 @@ public class EnemyHealth : MonoBehaviour {
 
     public int startingHealth = 200;
     public int currentHealth;
-    public float sinkSpeed = 2.5f;
-    public int scoreValue = 1;
+    float sinkSpeed = 0.5f;
+    int scoreValue = 1;
 
     //Animator anim;
+    GameObject enemy;
+    EnemyAttack enemyAttack;
+    EnemyMovement enemyMovement;
     BoxCollider2D boxCollider2D;
     bool isDead = false;
     bool isSinking;
@@ -17,8 +20,13 @@ public class EnemyHealth : MonoBehaviour {
     void Awake()
     {
         //anim = GetComponent<Animator>();
-        boxCollider2D = GetComponent<BoxCollider2D>();
+        enemy = GameObject.FindGameObjectWithTag("Enemy");
 
+        //to use with bullets //
+        //boxCollider2D = GetComponent<BoxCollider2D>();
+
+        enemyMovement = GetComponent<EnemyMovement>();
+        enemyAttack = GetComponentInChildren<EnemyAttack>();
         currentHealth = startingHealth;
     }
 	
@@ -31,29 +39,44 @@ public class EnemyHealth : MonoBehaviour {
         }
 	}
 
-    public void TakeDamage(int amount, Vector2 hitPoint)
+    // vectory2 hitpoint
+    //
+    public void TakeDamage(int amount)
     {
-        if (isDead)
+        if (isDead) 
+        { 
             return;
+        }
         currentHealth -= amount;
-        if (currentHealth <= 0)
+        if (currentHealth <= 0) 
+        { 
             Death();
+        }
     }
 
     void Death()
     {
         isDead = true;
-        boxCollider2D.isTrigger = true;
+        Destroy(enemy);
+        // use with bullets //
+        //boxCollider2D.isTrigger = true;
 
+        StartSinking();
         // anim.SetTrigger("Dead");
 
     }
+
+    // For Later use
+
     public void StartSinking()
     {
+        enemyMovement.enabled = false;
+        enemyAttack.enabled = false;
         GetComponent<Collider2D>().enabled = false;
         isSinking = true;
         ScoreManager.count += scoreValue;
-        Destroy(gameObject, 2f);
+        Destroy(gameObject, 0.5f);
 
     }
+
 }

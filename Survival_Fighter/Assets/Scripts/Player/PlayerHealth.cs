@@ -19,6 +19,7 @@ public class PlayerHealth : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake () {
+
         anim = GetComponent<Animator>();
         playerMovement = GetComponent<PlayerMovement>();
         playerAttack = GetComponentInChildren<PlayerAttack>();
@@ -27,6 +28,7 @@ public class PlayerHealth : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
         if(damaged)
         {
             damageImage.color = flashColour;
@@ -39,6 +41,7 @@ public class PlayerHealth : MonoBehaviour {
 	}
 
     public void TakeDamage (int amount) {
+
         damaged = true;
         currentHealth -= amount;
         healthSlider.value = currentHealth;
