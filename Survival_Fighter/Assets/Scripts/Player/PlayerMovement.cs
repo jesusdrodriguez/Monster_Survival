@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour {
 
     void Movement()
     {
-        anim.SetFloat("Speed", Mathf.Abs(Input.GetAxis("Horizontal")));
+       anim.SetFloat("Moving", Mathf.Abs(Input.GetAxis("Horizontal")));
 
         if(Input.GetAxisRaw("Horizontal") > 0) // right
         {
@@ -46,6 +46,7 @@ public class PlayerMovement : MonoBehaviour {
         {
             //crouch
         }
+
     }
     void OnCollisionEnter2D(Collision2D other){
 

@@ -8,23 +8,23 @@ public class EnemyAttack : MonoBehaviour {
 
     Animator anim;
     GameObject player;
+    //EnemyHealth enemyHealth;
     PlayerHealth playerHealth;
-    EnemyHealth enemyHealth;
     bool playerInRange;
     float timer;
 
-	// Use this for initialization
-	void Awake () {
-
+    // Use this for initialization
+    void Awake()
+    {
         player = GameObject.FindGameObjectWithTag("Player");
         playerHealth = player.GetComponent<PlayerHealth>();
-        enemyHealth = GetComponent<EnemyHealth>();
+        //enemyHealth = GetComponent<EnemyHealth>();
         //anim = GetComponent<Animator>();
-	}
+    }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject == player)
+        if (other.gameObject == player)
         {
             playerInRange = true;
         }
@@ -32,33 +32,34 @@ public class EnemyAttack : MonoBehaviour {
 
     void OnTriggerExit2D(Collider2D other)
     {
-        if(other.gameObject == player)
+        if (other.gameObject == player)
         {
             playerInRange = false;
         }
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update()
+    {
 
         timer += Time.deltaTime;
 
-        if(timer >= timeBetweenAttacks && playerInRange && enemyHealth.currentHealth > 0)
+        if (timer >= timeBetweenAttacks && playerInRange && playerHealth.currentHealth > 0)
         {
             Attack();
-        }        
+        }
 
-        if(playerHealth.currentHealth <=0)
+        if (playerHealth.currentHealth <= 0)
         {
             //anim.SetTrigger("PlayerDead");
         }
-	}
+    }
 
     void Attack()
     {
         timer = 0f;
 
-        if(playerHealth.currentHealth > 0)
+        if (playerHealth.currentHealth > 0)
         {
             playerHealth.TakeDamage(attackDamage);
         }
