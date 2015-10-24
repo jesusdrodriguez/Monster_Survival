@@ -8,30 +8,28 @@ public class EnemyAttack : MonoBehaviour {
 
     Animator anim;
     GameObject player;
-    //EnemyHealth enemyHealth;
     PlayerHealth playerHealth;
     bool playerInRange;
     float timer;
 
     // Use this for initialization
-    void Awake()
-    {
+    void Awake() {
+
         player = GameObject.FindGameObjectWithTag("Player");
         playerHealth = player.GetComponent<PlayerHealth>();
-        //enemyHealth = GetComponent<EnemyHealth>();
         //anim = GetComponent<Animator>();
     }
 
-    void OnTriggerEnter2D(Collider2D other)
-    {
+    void OnTriggerEnter2D(Collider2D other) {
+
         if (other.gameObject == player)
         {
             playerInRange = true;
         }
     }
 
-    void OnTriggerExit2D(Collider2D other)
-    {
+    void OnTriggerExit2D(Collider2D other) {
+
         if (other.gameObject == player)
         {
             playerInRange = false;
@@ -39,8 +37,7 @@ public class EnemyAttack : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
 
         timer += Time.deltaTime;
 
@@ -55,8 +52,7 @@ public class EnemyAttack : MonoBehaviour {
         }
     }
 
-    void Attack()
-    {
+    void Attack() {
         timer = 0f;
 
         if (playerHealth.currentHealth > 0)
