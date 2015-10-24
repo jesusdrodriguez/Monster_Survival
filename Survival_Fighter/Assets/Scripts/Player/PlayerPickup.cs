@@ -3,33 +3,39 @@ using System.Collections;
 
 public class PlayerPickup : MonoBehaviour {
 
-    GameObject pickup;
+    //GameObject pickup;
     GameObject player;
     bool isPicked;
 
-
     void Awake() {
 
-        player = GameObject.FindGameObjectWithTag("Player");
-        pickup = GameObject.FindGameObjectWithTag("Pickup");
+        //player = GameObject.FindGameObjectWithTag("Player");
+        //pickup = GameObject.FindGameObjectWithTag("Pickup");
     }
 
+    void Update()
+    {
+        if(isPicked)
+        {
+            
+        }
+
+    }
 
     void OnTriggerEnter2D(Collider2D other) {
 
-        if (player.gameObject.tag == "Pickup")
+        if (other.gameObject.tag == "Pickup")
         {
-            Destroy(other.gameObject);
+            other.gameObject.SetActive(false);
             Debug.Log("Picked up a wep!");
             isPicked = true;
            // PickupItem(temp);
         }
     }
-
+    /*
     public void defaultWep() {
         
     }
-
 
     public void PickupItem(GameObject pickup) {
 
@@ -38,5 +44,5 @@ public class PlayerPickup : MonoBehaviour {
             defaultWep();
         }
 
-    }
+    }*/
 }

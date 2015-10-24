@@ -6,7 +6,7 @@ public class EnemyMovement : MonoBehaviour {
     Animator anim;
     public int speed;
     public float dist;
-    public bool isDead;
+    //public bool isDead;
 
     Transform player;
     Transform enemy;
