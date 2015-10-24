@@ -3,8 +3,6 @@ using System.Collections;
 
 public class EnemyMovement : MonoBehaviour {
 
-    //PlayerHealth playerHealth;
-    //EnemyHealth enemyHealth;
     Animator anim;
     public int speed;
     public float dist;
@@ -13,8 +11,8 @@ public class EnemyMovement : MonoBehaviour {
     Transform player;
     Transform enemy;
 
-    void Start()
-    {
+    void Start() {
+
         anim = GetComponent<Animator>();
         enemy = this.GetComponent<Transform>();
         player = GameObject.FindWithTag("Player").transform;
@@ -22,7 +20,7 @@ public class EnemyMovement : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        
+
         AI_movement();
     }
 

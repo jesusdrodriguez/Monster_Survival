@@ -9,8 +9,8 @@ public class PlayerMovement : MonoBehaviour {
     Animator anim;
     Rigidbody2D rb;
 
-    void Start()
-    {
+    void Start() {
+
         isGrounded = true;
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
@@ -23,8 +23,8 @@ public class PlayerMovement : MonoBehaviour {
         Movement();
 	}
 
-    void Movement()
-    {
+    void Movement() {
+
        anim.SetFloat("Moving", Mathf.Abs(Input.GetAxis("Horizontal")));
 
         if(Input.GetAxisRaw("Horizontal") > 0) // right
@@ -46,9 +46,9 @@ public class PlayerMovement : MonoBehaviour {
         {
             //crouch
         }
-
     }
-    void OnCollisionEnter2D(Collision2D other){
+
+    void OnCollisionEnter2D(Collision2D other) {
 
         if(other.gameObject.tag == "Ground")
             isGrounded = true;

@@ -6,16 +6,17 @@ public class ScoreManager : MonoBehaviour {
 
     public static int count;
 
-    Text text;
-
+    Text score;
 	// Use this for initialization
 	void Awake () {
-        text = GetComponent<Text>();
+
+        score = GetComponent<Text>();
         count = 0;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        text.text = "Kill Count: " + count;
+
+        score.text = "Kill Count: " + count;
 	}
 }
