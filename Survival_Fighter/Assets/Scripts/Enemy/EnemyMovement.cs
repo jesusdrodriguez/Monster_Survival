@@ -3,11 +3,12 @@ using System.Collections;
 
 public class EnemyMovement : MonoBehaviour {
 
-    PlayerHealth playerHealth;
-    EnemyHealth enemyHealth;
+    //PlayerHealth playerHealth;
+    //EnemyHealth enemyHealth;
     Animator anim;
     public int speed;
     public float dist;
+    public bool isDead;
 
     Transform player;
     Transform enemy;
@@ -30,6 +31,7 @@ public class EnemyMovement : MonoBehaviour {
         anim.SetFloat("Move", Mathf.Abs(Input.GetAxis("Horizontal")));
         // move to player after locating it on target.position
         // player is left of enemy, move left
+
         if ((player.position.x+dist) < enemy.position.x) 
         { 
             enemy.position -= enemy.right * speed * Time.deltaTime;

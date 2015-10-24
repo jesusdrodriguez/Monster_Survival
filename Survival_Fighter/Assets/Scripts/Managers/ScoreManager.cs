@@ -16,6 +16,6 @@ public class ScoreManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        text.text = "Count: " + count;
+        text.text = "Kill Count: " + count;
 	}
 }
