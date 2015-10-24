@@ -1,0 +1,287 @@
+fileFormatVersion: 2
+guid: 106986fca0ca7d548b020f3f5c7476cd
+timeCreated: 1445547972
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: AnimationRight_0
+    21300002: AnimationRight_1
+    21300004: AnimationRight_2
+    21300006: AnimationRight_3
+    21300008: AnimationRight_4
+    21300010: AnimationRight_5
+    21300012: AnimationRight_6
+    21300014: AnimationRight_7
+    21300016: AnimationRight_8
+    21300018: AnimationRight_9
+    21300020: AnimationRight_10
+    21300022: AnimationRight_11
+    21300024: AnimationRight_12
+    21300026: AnimationRight_13
+    21300028: AnimationRight_14
+    21300030: AnimationRight_15
+    21300032: AnimationRight_16
+    21300034: AnimationRight_17
+    21300036: AnimationRight_18
+    21300038: AnimationRight_19
+    21300040: AnimationRight_20
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: AnimationRight_0
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 614
+        width: 34
+        height: 133
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: AnimationRight_1
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 614
+        width: 41
+        height: 132
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: AnimationRight_2
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 614
+        width: 46
+        height: 131
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: AnimationRight_3
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 614
+        width: 47
+        height: 131
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: AnimationRight_4
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 614
+        width: 38
+        height: 131
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: AnimationRight_5
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 444
+        width: 41
+        height: 132
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: AnimationRight_6
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 445
+        width: 46
+        height: 131
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: AnimationRight_7
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 476
+        width: 39
+        height: 110
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: AnimationRight_8
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 481
+        width: 47
+        height: 109
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: AnimationRight_9
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 473
+        width: 39
+        height: 110
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: AnimationRight_10
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 445
+        width: 46
+        height: 131
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: AnimationRight_11
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 250
+        width: 47
+        height: 131
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: AnimationRight_12
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 250
+        width: 41
+        height: 131
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: AnimationRight_13
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 250
+        width: 52
+        height: 131
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: AnimationRight_14
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 193
+        width: 80
+        height: 195
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: AnimationRight_15
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 59
+        width: 47
+        height: 131
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: AnimationRight_16
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 57
+        width: 42
+        height: 133
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: AnimationRight_17
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 57
+        width: 38
+        height: 133
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: AnimationRight_18
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 57
+        width: 57
+        height: 133
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: AnimationRight_19
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 57
+        width: 66
+        height: 133
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: AnimationRight_20
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 445
+        width: 38
+        height: 131
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

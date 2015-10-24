@@ -1,0 +1,199 @@
+fileFormatVersion: 2
+guid: 1df2e524a7811ad44b2134586a7b0c56
+timeCreated: 1445485005
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: PlayerMovement_0
+    21300002: PlayerMovement_1
+    21300004: PlayerMovement_2
+    21300006: PlayerMovement_3
+    21300008: PlayerMovement_4
+    21300010: PlayerMovement_5
+    21300012: PlayerMovement_6
+    21300014: PlayerMovement_7
+    21300016: PlayerMovement_8
+    21300018: PlayerMovement_9
+    21300020: PlayerMovement_10
+    21300022: PlayerMovement_11
+    21300024: PlayerMovement_12
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: PlayerMovement_0
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 439
+        width: 34
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PlayerMovement_1
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 440
+        width: 41
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PlayerMovement_2
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 441
+        width: 46
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PlayerMovement_3
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 441
+        width: 47
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PlayerMovement_4
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 441
+        width: 38
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PlayerMovement_5
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 250
+        width: 47
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PlayerMovement_6
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 250
+        width: 41
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PlayerMovement_7
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 250
+        width: 52
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PlayerMovement_8
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 59
+        width: 47
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PlayerMovement_9
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 57
+        width: 42
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PlayerMovement_10
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 57
+        width: 38
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PlayerMovement_11
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 57
+        width: 57
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PlayerMovement_12
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 57
+        width: 66
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
