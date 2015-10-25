@@ -13,8 +13,8 @@ public class PlayerPickup : MonoBehaviour {
         //pickup = GameObject.FindGameObjectWithTag("Pickup");
     }
 
-    void Update()
-    {
+    void Update() {
+
         if(isPicked)
         {
             

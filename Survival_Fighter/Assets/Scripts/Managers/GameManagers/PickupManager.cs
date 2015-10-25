@@ -7,15 +7,15 @@ public class PickupManager : MonoBehaviour {
     GameObject player;
     bool isPicked;
 
-    void Awake()
-    {
+    void Awake() {
+
         //defaultWep();
         //player = GameObject.FindGameObjectWithTag("Player");
         //pickup = GameObject.FindGameObjectWithTag("Pickup");
     }
 
-    void Update()
-    {
+    void Update() {
+
         if (isPicked)
         {
             Debug.Log("isPicked");
@@ -23,8 +23,8 @@ public class PickupManager : MonoBehaviour {
 
     }
 
-    void OnTriggerEnter2D(Collider2D other)
-    {
+    void OnTriggerEnter2D(Collider2D other) {
+
         if (other.gameObject.tag == "Pickup")
         {
             Destroy(other.gameObject);
