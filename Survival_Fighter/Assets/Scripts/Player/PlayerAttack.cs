@@ -14,16 +14,14 @@ public class PlayerAttack : MonoBehaviour {
     float timer;
 
     // Use this for initialization
-    void Awake()
-    {
+    void Awake() {
 
         enemy = GameObject.FindGameObjectWithTag("Enemy");
         enemyHealth = enemy.GetComponent<EnemyHealth>();
         //anim = GetComponent<Animator>();
     }
 
-    void OnTriggerEnter2D(Collider2D other)
-    {
+    void OnTriggerEnter2D(Collider2D other) {
 
         if (other.gameObject == enemy)
         {
@@ -31,8 +29,7 @@ public class PlayerAttack : MonoBehaviour {
         }
     }
 
-    void OnTriggerExit2D(Collider2D other)
-    {
+    void OnTriggerExit2D(Collider2D other) {
 
         if (other.gameObject == enemy)
         {
@@ -41,8 +38,8 @@ public class PlayerAttack : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
+
         timer += Time.deltaTime;
 
         if (Input.GetKeyDown(KeyCode.E))
@@ -54,10 +51,12 @@ public class PlayerAttack : MonoBehaviour {
         {
             Attack();
         }
+        else
+            canAttack = false;
     }
 
-    void Attack()
-    {
+    void Attack() {
+
         timer = 0f;
 
         if (enemyHealth.currentHealth > 0)
