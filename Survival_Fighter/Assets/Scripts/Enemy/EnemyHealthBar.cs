@@ -3,8 +3,7 @@ using System.Collections;
 
 public class EnemyHealthBar : MonoBehaviour {
 
-    public int startingHealth = 200;
-    public int currentHealth;
+    EnemyHealth enemyHealth;
     public RectTransform canvasRectT;
     public RectTransform healthBar;
     public Transform objectToFollow;
