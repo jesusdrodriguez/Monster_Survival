@@ -9,21 +9,22 @@ public class PlayerAttack : MonoBehaviour {
     Animator anim;
     GameObject enemy;
     EnemyHealth enemyHealth;
+    //PlayerEquip pickup;
     bool enemyInRange;
     bool canAttack;
+    //bool canMelee;
+    //bool canGun;
     float timer;
 
     // Use this for initialization
     void Awake() {
 
-        enemy = GameObject.FindGameObjectWithTag("Enemy");
-        enemyHealth = enemy.GetComponent<EnemyHealth>();
         //anim = GetComponent<Animator>();
     }
 
     void OnTriggerEnter2D(Collider2D other) {
 
-        if (other.gameObject == enemy)
+        if (other.gameObject.tag == "Enemy")
         {
             enemyInRange = true;
         }
@@ -31,7 +32,7 @@ public class PlayerAttack : MonoBehaviour {
 
     void OnTriggerExit2D(Collider2D other) {
 
-        if (other.gameObject == enemy)
+        if (other.gameObject.tag == "Enemy")
         {
             enemyInRange = false;
         }
@@ -39,17 +40,19 @@ public class PlayerAttack : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
+            
+        enemy = GameObject.FindGameObjectWithTag("Enemy");
+        enemyHealth = enemy.GetComponent<EnemyHealth>();
 
         timer += Time.deltaTime;
 
-        if (Input.GetKeyDown(KeyCode.E))
+        // && canMelee
+        if (Input.GetKeyDown(KeyCode.E) && enemyInRange)
         {
-            canAttack = true;
-        }
-
-        if (timer >= timeBetweenAttacks && enemyInRange && enemyHealth.currentHealth > 0 && canAttack)
-        {
-            Attack();
+            if (timer >= timeBetweenAttacks)
+            {
+                Attack();
+            }
         }
         else
             canAttack = false;
@@ -59,9 +62,7 @@ public class PlayerAttack : MonoBehaviour {
 
         timer = 0f;
 
-        if (enemyHealth.currentHealth > 0)
-        {
-            enemyHealth.TakeDamage(attackDamage);
-        }
+        enemyHealth.TakeDamage(attackDamage);
+
     }
 }

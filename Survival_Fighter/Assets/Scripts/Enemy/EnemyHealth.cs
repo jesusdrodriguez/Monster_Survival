@@ -10,25 +10,19 @@ public class EnemyHealth : MonoBehaviour {
     int scoreValue = 1;
 
     //Animator anim;
-    public RectTransform canvasRectT;
-    public RectTransform healthBar;
     public Slider healthSlider;
-    public Transform objectToFollow;
-    public GameObject enemy;
-    public Canvas enemyBar;
     EnemyAttack enemyAttack;
     EnemyMovement enemyMovement;
-    BoxCollider2D boxCollider2D;
+    //BoxCollider2D boxCollider2D;
     bool isSinking;
 
 	// Use this for initialization
     void Awake() {
 
         //anim = GetComponent<Animator>();
-
+        
         //to use with bullets //
         //boxCollider2D = GetComponent<BoxCollider2D>();
-
         enemyMovement = GetComponent<EnemyMovement>();
         enemyAttack = GetComponentInChildren<EnemyAttack>();
         currentHealth = startingHealth;
@@ -37,16 +31,13 @@ public class EnemyHealth : MonoBehaviour {
 	// Update is called once per frame
 	void Update() {
 
-        Vector2 screenPoint = RectTransformUtility.WorldToScreenPoint(Camera.main, objectToFollow.position);
-        healthBar.anchoredPosition = screenPoint - canvasRectT.sizeDelta / 2f;
-
         if(isSinking)
         {
             transform.Translate(-Vector2.up * sinkSpeed * Time.deltaTime);
         }
 	}
 
-    // might require vectory2 hitpoint for bullet impacts
+    // might require vector2 hitpoint for bullet impacts
     //
     public void TakeDamage(int amount) {
 
@@ -55,14 +46,14 @@ public class EnemyHealth : MonoBehaviour {
 
         if (currentHealth <= 0) 
         { 
-            Death();
+            Death(gameObject);
         }
     }
 
-    void Death() {
+    void Death(GameObject other) {
 
-        Destroy(enemy);
-        enemyBar.enabled = false;
+        Destroy(other);
+
         // use with bullets //
         //boxCollider2D.isTrigger = true;
 
@@ -70,7 +61,7 @@ public class EnemyHealth : MonoBehaviour {
         // anim.SetTrigger("Dead");
 
     }
-
+    
     // For Later use // for now we destroy the enemy object
     public void StartSinking() {
 
