@@ -7,7 +7,7 @@ public class ScoreManager : MonoBehaviour {
     public static int count;
 
     Text score;
-	// Use this for initialization
+
 	void Awake () {
 
         score = GetComponent<Text>();
