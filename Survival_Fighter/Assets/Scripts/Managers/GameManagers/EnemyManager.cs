@@ -18,7 +18,6 @@ public class EnemyManager : MonoBehaviour {
 
     void Spawn()
     {
-
         if (playerHealth.currentHealth <= 0f)
         {
             return;
@@ -27,11 +26,9 @@ public class EnemyManager : MonoBehaviour {
         if (count > 0)
         {
             Instantiate(enemy, new Vector2(spawnPoint1.position.x, spawnPoint1.position.y), Quaternion.identity);
-            //Quaternion.Euler(transform.rotation.eulerAngles.x, 0, 0);
             count--;
         }
         else
             return;
-     
     }
 }

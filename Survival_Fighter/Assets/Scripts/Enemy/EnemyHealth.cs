@@ -13,18 +13,13 @@ public class EnemyHealth : MonoBehaviour {
     public Slider healthSlider;
     EnemyAttack enemyAttack;
     EnemyMovement enemyMovement;
-    //BoxCollider2D boxCollider2D;
     bool isSinking;
+    bool isDead;
 
 	// Use this for initialization
     void Awake() {
 
         //anim = GetComponent<Animator>();
-        
-        //to use with bullets //
-        //boxCollider2D = GetComponent<BoxCollider2D>();
-        enemyMovement = GetComponent<EnemyMovement>();
-        enemyAttack = GetComponentInChildren<EnemyAttack>();
         currentHealth = startingHealth;
     }
 	
@@ -40,38 +35,35 @@ public class EnemyHealth : MonoBehaviour {
     // might require vector2 hitpoint for bullet impacts
     //
     public void TakeDamage(int amount) {
+        
+        if(isDead)
+            return;
 
         currentHealth -= amount;
         healthSlider.value = currentHealth;
 
         if (currentHealth <= 0) 
         { 
-            Death(gameObject);
+            Death();
         }
     }
 
-    void Death(GameObject other) {
+    void Death() {
 
-        Destroy(other);
-
-        // use with bullets //
-        //boxCollider2D.isTrigger = true;
-
+        isDead = true;
         StartSinking();
         // anim.SetTrigger("Dead");
-
     }
     
     // For Later use // for now we destroy the enemy object
     public void StartSinking() {
 
-        enemyMovement.enabled = false;
-        enemyAttack.enabled = false;
+        GetComponent<EnemyMovement>().enabled = false;
+        GetComponent<EnemyAttack>().enabled = false;
         GetComponent<Collider2D>().enabled = false;
         isSinking = true;
         ScoreManager.count += scoreValue;
-        Destroy(gameObject, 0.5f);
-
+        Destroy(transform.parent.gameObject);
     }
 
 }
