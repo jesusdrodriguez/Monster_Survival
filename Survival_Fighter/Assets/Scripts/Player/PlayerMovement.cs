@@ -29,11 +29,19 @@ public class PlayerMovement : MonoBehaviour {
 
         if(Input.GetAxisRaw("Horizontal") > 0) // right
         {
+            if(transform.position.x >= 10)
+            {
+                transform.Translate(-Vector2.right * speed * Time.deltaTime);
+            }
             transform.Translate(Vector2.right * speed * Time.deltaTime);
             transform.eulerAngles = new Vector2(0, 0);
         }
         if (Input.GetAxisRaw("Horizontal") < 0) // left
         {
+            if (transform.position.x <= -10)
+            {
+                transform.Translate(-Vector2.right * speed * Time.deltaTime);
+            }
             transform.Translate(Vector2.right * speed * Time.deltaTime);
             transform.eulerAngles = new Vector2(0, 180);
         }

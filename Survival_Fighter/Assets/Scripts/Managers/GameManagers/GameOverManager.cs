@@ -30,7 +30,7 @@ public class GameOverManager : MonoBehaviour {
             if(restartTimer >= restartDelay)
             {
                 // reload the level
-                Application.LoadLevel(Application.loadedLevel);
+                Application.LoadLevel(2);
             }
         }
 	}

@@ -26,6 +26,7 @@ public class EnemyManager : MonoBehaviour {
         if (count > 0)
         {
             Instantiate(enemy, new Vector2(spawnPoint1.position.x, spawnPoint1.position.y), Quaternion.identity);
+            Instantiate(enemy, new Vector2(spawnPoint2.position.x, spawnPoint2.position.y), Quaternion.identity);
             count--;
         }
         else
