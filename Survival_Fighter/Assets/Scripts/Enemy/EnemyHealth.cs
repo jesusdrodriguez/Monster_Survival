@@ -19,6 +19,8 @@ public class EnemyHealth : MonoBehaviour {
 	// Use this for initialization
     void Awake() {
 
+        healthSlider.maxValue = startingHealth;
+        healthSlider.value = startingHealth;
         //anim = GetComponent<Animator>();
         currentHealth = startingHealth;
     }

@@ -20,6 +20,8 @@ public class PlayerHealth : MonoBehaviour {
 	// Use this for initialization
 	void Awake () {
 
+        healthSlider.maxValue = startingHealth;
+        healthSlider.value = startingHealth;
         anim = GetComponent<Animator>();
         playerMovement = GetComponent<PlayerMovement>();
         playerAttack = GetComponentInChildren<PlayerAttack>();
@@ -28,6 +30,13 @@ public class PlayerHealth : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+
+
+        if(currentHealth > startingHealth)
+        {
+            currentHealth = startingHealth;
+        }
 
         if(damaged)
         {
@@ -53,15 +62,28 @@ public class PlayerHealth : MonoBehaviour {
         }
     }
 
+
+    public void HealHealth(int amount) {
+
+        currentHealth += amount;
+        healthSlider.value = currentHealth;
+    }
+
+
     void Death() {
 
         isDead = true;
         anim.SetTrigger("Death");
         playerMovement.enabled = false;
         playerAttack.enabled = false;
+        Delay();
         loadMainMenu(0);
     }
 
+    IEnumerator Delay() {
+        yield return new WaitForSeconds(5f);  
+    }
+ 
     void loadMainMenu(int level) {
 
         Application.LoadLevel(level);

@@ -4,7 +4,7 @@ using System.Collections;
 public class EnemyMovement : MonoBehaviour {
 
     Animator anim;
-    public int speed;
+    public float speed;
     public float dist;
     //public bool isDead;
 
