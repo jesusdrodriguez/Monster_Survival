@@ -4,12 +4,22 @@ using System.Collections;
 
 public class EnemyHealth : MonoBehaviour {
 
+    public AudioClip deathClip;
+    AudioSource enemyAudio;
     public int startingHealth = 200;
     public int currentHealth;    
     float sinkSpeed = 0.5f;
     int scoreValue = 1;
 
-    //Animator anim;
+    // drop items
+    public GameObject Ammo;
+    public GameObject FirstAid;
+    public GameObject Gun;
+    public GameObject Melee;
+    public GameObject Nuke;
+    //
+
+    Animator anim;
     public Slider healthSlider;
     EnemyAttack enemyAttack;
     EnemyMovement enemyMovement;
@@ -21,7 +31,8 @@ public class EnemyHealth : MonoBehaviour {
 
         healthSlider.maxValue = startingHealth;
         healthSlider.value = startingHealth;
-        //anim = GetComponent<Animator>();
+        anim = GetComponent<Animator>();
+        enemyAudio = GetComponent<AudioSource>();
         currentHealth = startingHealth;
     }
 	
@@ -34,7 +45,6 @@ public class EnemyHealth : MonoBehaviour {
         }
 	}
 
-    // might require vector2 hitpoint for bullet impacts
     //
     public void TakeDamage(int amount) {
         
@@ -44,9 +54,32 @@ public class EnemyHealth : MonoBehaviour {
         currentHealth -= amount;
         healthSlider.value = currentHealth;
 
+        float rand = Random.Range(0f, 1f);
+
         if (currentHealth <= 0) 
         { 
             Death();
+
+            if(rand >= 0.25f)
+            {
+                //do nothing
+            }
+            else if (rand <= 0.25f)
+            {
+                GameObject.Instantiate(Ammo, new Vector2(transform.position.x, transform.position.y), Quaternion.identity);
+            }
+            else if (rand <= 0.12f)
+            {
+                GameObject.Instantiate(FirstAid, new Vector2(transform.position.x, transform.position.y), Quaternion.identity);
+            }
+            else if (rand <= 0.06f)
+            {
+                GameObject.Instantiate(Gun, new Vector2(transform.position.x, transform.position.y), Quaternion.identity);
+            }
+            else if (rand <= 0.02f)
+            {
+                GameObject.Instantiate(Nuke, new Vector2(transform.position.x, transform.position.y), Quaternion.identity);
+            }
         }
     }
 
@@ -54,7 +87,8 @@ public class EnemyHealth : MonoBehaviour {
 
         isDead = true;
         StartSinking();
-        // anim.SetTrigger("Dead");
+        anim.SetTrigger("Dead");
+        enemyAudio.Play();
     }
     
     // For Later use // for now we destroy the enemy object
@@ -65,7 +99,7 @@ public class EnemyHealth : MonoBehaviour {
         GetComponent<Collider2D>().enabled = false;
         isSinking = true;
         ScoreManager.count += scoreValue;
-        Destroy(transform.parent.gameObject);
+        Destroy(transform.parent.gameObject, 2f);
     }
 
 }

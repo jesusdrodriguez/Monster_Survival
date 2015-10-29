@@ -8,12 +8,14 @@ public class PlayerMovement : MonoBehaviour {
     Vector2 movement;
     Animator anim;
     Rigidbody2D rb;
+    PlayerPickup playerPickup;
 
     void Start() {
 
         isGrounded = true;
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        playerPickup = GetComponent<PlayerPickup>();
     }
 
 
@@ -25,11 +27,17 @@ public class PlayerMovement : MonoBehaviour {
 
     void Movement() {
 
-       anim.SetFloat("Moving", Mathf.Abs(Input.GetAxis("Horizontal")));
+        if(playerPickup.canMelee)
+        {
+            anim.SetFloat("Moving", Mathf.Abs(Input.GetAxis("Horizontal")));
+        }
+       else
+            anim.SetFloat("GunMoving", Mathf.Abs(Input.GetAxis("Horizontal")));
+            
 
         if(Input.GetAxisRaw("Horizontal") > 0) // right
         {
-            if(transform.position.x >= 10)
+            if(transform.position.x >= 8.65)
             {
                 transform.Translate(-Vector2.right * speed * Time.deltaTime);
             }
@@ -38,7 +46,7 @@ public class PlayerMovement : MonoBehaviour {
         }
         if (Input.GetAxisRaw("Horizontal") < 0) // left
         {
-            if (transform.position.x <= -10)
+            if (transform.position.x <= -8.65)
             {
                 transform.Translate(-Vector2.right * speed * Time.deltaTime);
             }
@@ -47,7 +55,7 @@ public class PlayerMovement : MonoBehaviour {
         }
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
-            rb.AddForce(Vector2.up * speed * 60);
+            rb.AddForce(Vector2.up * speed * 70);
             isGrounded = false;
         }
         if (Input.GetKeyDown(KeyCode.S))

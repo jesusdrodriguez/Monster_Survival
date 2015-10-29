@@ -27,6 +27,7 @@ public class EnemyMovement : MonoBehaviour {
     void AI_movement() {
 
         anim.SetFloat("Move", Mathf.Abs(Input.GetAxis("Horizontal")));
+
         // move to player after locating it on target.position
         // player is left of enemy, move left
 

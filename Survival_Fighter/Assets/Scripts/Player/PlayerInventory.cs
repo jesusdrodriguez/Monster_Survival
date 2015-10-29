@@ -1,28 +1,34 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class PlayerInventory : MonoBehaviour {
 
-    int MaxAmmo = 500;
-    int StartingAmmo = 150;
+    //public static int amount = 0;
+    public int MaxAmmo = 500;
+    public int StartingAmmo = 500;
     public int currentAmmo;
-    PlayerAttack playerAttack;
+    public bool hasAmmo = true;
 
-    void Awake()
-    {
+    void Start () {
+
         currentAmmo = StartingAmmo;
     }
 
 	// Update is called once per frame
 	void Update () {
 
-        if(currentAmmo >= MaxAmmo)
+        if (currentAmmo >= MaxAmmo)
         {
             currentAmmo = MaxAmmo;
         }
-        
+        if (currentAmmo > 0)
+        {
+            hasAmmo = true;
+        }
+        else
+            hasAmmo = false;
 	}
-
 
     public void AddAmmo(int amount)
     {

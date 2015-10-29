@@ -3,7 +3,6 @@ using System.Collections;
 
 public class PlayerPickup : MonoBehaviour
 {
-    //public Sprite newSprite;
     PlayerHealth playerHealth;
     PlayerInventory playerInventory;
 
@@ -20,14 +19,16 @@ public class PlayerPickup : MonoBehaviour
         canMelee = true;
     }
     void Update()
-    {
-        /*if (MeleeIsEquiped && isMelee)
+    {/*
+        if (MeleeIsEquiped && canMelee)
         {
+            gameObject.GetComponent<SpriteRenderer>().sprite = img1;
             canMelee = true;
             MeleeIsEquiped = false;
         }
-        if (GunIsEquiped && isGun)
+        if (GunIsEquiped && canShoot)
         {
+            gameObject.GetComponent<SpriteRenderer>().sprite = img2;
             canShoot = true;
             GunIsEquiped = false;
         }*/

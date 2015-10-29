@@ -12,6 +12,8 @@ public class PlayerHealth : MonoBehaviour {
     public Color flashColour = new Color(1f, 0f, 0f, 0.1f);
 
     Animator anim;
+    public AudioClip deathClip;
+    AudioSource playerAudio;
     PlayerMovement playerMovement;
     PlayerAttack playerAttack;
     bool isDead = false;
@@ -23,6 +25,7 @@ public class PlayerHealth : MonoBehaviour {
         healthSlider.maxValue = startingHealth;
         healthSlider.value = startingHealth;
         anim = GetComponent<Animator>();
+        playerAudio = GetComponent<AudioSource>();
         playerMovement = GetComponent<PlayerMovement>();
         playerAttack = GetComponentInChildren<PlayerAttack>();
         currentHealth = startingHealth;
@@ -30,8 +33,6 @@ public class PlayerHealth : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-
 
         if(currentHealth > startingHealth)
         {
@@ -74,19 +75,32 @@ public class PlayerHealth : MonoBehaviour {
 
         isDead = true;
         anim.SetTrigger("Death");
+        playerAudio.clip = deathClip;
+        playerAudio.Play();
         playerMovement.enabled = false;
         playerAttack.enabled = false;
         Delay();
-        loadMainMenu(0);
+        //loadMainMenu(0);
     }
 
     IEnumerator Delay() {
-        yield return new WaitForSeconds(5f);  
+        yield return new WaitForSeconds(10f);
+        loadMainMenu(0);
     }
  
     void loadMainMenu(int level) {
 
         Application.LoadLevel(level);
     }
+
+    /*public void StartSinking()
+    {
+
+        GetComponent<PlayerMovement>().enabled = false;
+        GetComponent<PlayerAttack>().enabled = false;
+        GetComponent<Collider2D>().enabled = false;
+        isSinking = true;
+        Destroy(gameObject);
+    }*/
 
 }
